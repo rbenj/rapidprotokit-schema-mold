@@ -4,8 +4,8 @@ function App() {
   return (
     <div>
       <h1>Example:</h1>
-      <SchemaMold />
-      <SchemaMold />
+      <SchemaMold label="First" />
+      <SchemaMold label="Second" />
     </div>
   );
 }
