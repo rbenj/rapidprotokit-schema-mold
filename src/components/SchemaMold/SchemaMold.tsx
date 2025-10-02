@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './SchemaMold.css';
+import styles from './SchemaMold.module.css';
 
 export interface SchemaMoldProps { label: string };
 
@@ -8,7 +8,7 @@ export default function SchemaMold({ label }: SchemaMoldProps) {
 
   return (
     <>
-      <h1>{label}</h1>
+      <h1 className={styles.title}>{label}</h1>
       <div className="card">
         <button onClick={() => setCount(count => count + 1)}>
           count is {count}

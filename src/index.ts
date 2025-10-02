@@ -1,2 +1,1 @@
-export { default } from './SchemaMold';
-export type { SchemaMoldProps } from './SchemaMold';
+export { default as SchemaMold, type SchemaMoldProps } from './components/SchemaMold/SchemaMold';

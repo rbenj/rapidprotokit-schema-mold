@@ -1,4 +1,5 @@
-import SchemaMold from './SchemaMold';
+import React from 'react';
+import { SchemaMold } from '../src';
 
 function App() {
   return (
