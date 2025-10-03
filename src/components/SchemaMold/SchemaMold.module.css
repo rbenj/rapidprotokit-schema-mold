@@ -1,3 +1,63 @@
-.title {
-  color: purple;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin-md);
+}
+
+.note {
+  font-size: var(--fs-sm);
+}
+
+.error {
+  color: var(--color-error);
+  font-size: var(--fs-sm);
+}
+
+.fieldset {
+  border-radius: var(--rad-outer);
+  border: var(--border-outer-width) var(--border-outer-style) var(--color-border);
+  margin-bottom: var(--margin-md);
+  padding: var(--padding-md);
+}
+
+.label {
+  padding-right: var(--margin-sm);
+}
+
+.arrayFieldOuter {
+  border-radius: var(--rad-inner);
+  border: var(--border-inner-width) var(--border-inner-style) var(--color-border);
+  margin-bottom: var(--margin-md);
+  padding: var(--padding-md);
+}
+
+.arrayField_label {
+  font-weight: 600;
+  margin-bottom: var(--margin-sm);
+}
+
+.arrayField_item {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--margin-sm);
+  margin-bottom: var(--margin-sm);
+}
+
+.arrayField_item_field {
+  flex: 1;
+}
+
+.output {
+  border-radius: var(--rad-outer);
+  overflow: auto;
+  padding: var(--padding-md);
+}
+
+.submitButton {
+  align-self: flex-start;
+  background-color: var(--color-text);
+  border-radius: var(--rad-outer);
+  color: var(--color-background);
+  padding: var(--padding-md);
+  width: 25%;
 }

@@ -1,68 +1,115 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Fonts */
+  --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Font sizes (minor third scale) */
+  --fs-xs:  0.75rem;   --lh-xs:  1.33;   /* 12px/~16px */
+  --fs-sm:  0.875rem;  --lh-sm:  1.14;   /* 14px/~16px */
+  --fs-md:  1rem;      --lh-md:  1.5;    /* 16px/~24px */
+  --fs-lg:  1.25rem;   --lh-lg:  1.6;    /* 20px/~32px */
+  --fs-xl:  1.5rem;    --lh-xl:  1.33;   /* 24px/~32px */
+  --fs-2xl: 1.75rem;   --lh-2xl: 1.14;   /* 28px/~32px */
+  --fs-3xl: 2rem;      --lh-3xl: 1.25;   /* 32px/~40px */
+  --fs-4xl: 2.5rem;    --lh-4xl: 1.2;    /* 40px/~48px */
+  --fs-5xl: 3rem;      --lh-5xl: 1.17;   /* 48px/~64px */
+  --fs-6xl: 4rem;      --lh-6xl: 1.125;  /* 64px/~72px */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  --fs-body: var(--fs-md);   --lh-body: var(--lh-md);   --fw-body: 400;
+  --fs-h1:   var(--fs-4xl);  --lh-h1:   var(--lh-4xl);  --fw-h1:   700;
+  --fs-h2:   var(--fs-3xl);  --lh-h2:   var(--lh-3xl);  --fw-h2:   700;
+  --fs-h3:   var(--fs-2xl);  --lh-h3:   var(--lh-2xl);  --fw-h3:   700;
+  --fs-h4:   var(--fs-xl);   --lh-h4:   var(--lh-xl);   --fw-h4:   700;
+
+  /* Layout */
+  --grid-max-width: 640px;
+
+  --grid-base: 8px;
+  --grid-cols: 6;
+
+  --grid-gutter: 8px;
+  --grid-margin: 24px;
+
+  --grid-span-1: calc(100% / (var(--grid-cols) / 1) - var(--grid-gutter) / 2);
+  --grid-span-2: calc(100% / (var(--grid-cols) / 2) - var(--grid-gutter) / 2);
+  --grid-span-3: calc(100% / (var(--grid-cols) / 3) - var(--grid-gutter) / 2);
+  --grid-span-4: calc(100% / (var(--grid-cols) / 4) - var(--grid-gutter) / 2);
+  --grid-span-5: calc(100% / (var(--grid-cols) / 5) - var(--grid-gutter) / 2);
+  --grid-span-6: calc(100% / (var(--grid-cols) / 6) - var(--grid-gutter) / 2);
+
+  --padding-sm: 8px;
+  --padding-md: 16px;
+  --padding-lg: 32px;
+  --padding-xl: 48px;
+
+  --margin-sm: 8px;
+  --margin-md: 16px;
+  --margin-lg: 32px;
+  --margin-xl: 48px;
+
+  /* Borders */
+  --border-outer-width: 1px;
+  --border-outer-style: solid;
+  --border-inner-width: 1px;
+  --border-inner-style: dashed;
+
+  /* Corners */
+  --rad-inner: 6px;
+  --rad-outer: 8px;
+
+  /* Colors */
+  --color-primary: #2f2f2f;
+  --color-accent: #cf7d39;
+  --color-error: #a11a28;
+
+  --color-text: var(--color-primary);
+  --color-link: var(--color-accent);
+  --color-background: #f7f7f7;
+  --color-border: #ddd;
+}
+
+html {
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  box-sizing: border-box;
+  line-height: var(--lh-body);
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--fs-body);
+  line-height: inherit;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a,
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+p a,
+p a:hover {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  border: none;
 }
